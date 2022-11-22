@@ -199,7 +199,7 @@ namespace EloquentSurveillance {
          * @return
          */
         bool enableExposureControl() {
-            setExposureControl(true);
+            return setExposureControl(true);
         }
 
         /**
