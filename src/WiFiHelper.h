@@ -21,7 +21,9 @@ namespace EloquentSurveillance {
          * @return
          */
         bool connect(const char *ssid, const char *password, uint16_t timeout = 10000) {
-            _isClient = true;
+            debug("INFO", "in connect");
+            debug("INFO", WiFi.localIP());
+            /*_isClient = true;
 
             WiFi.mode(WIFI_STA);
             WiFi.begin(ssid, password);
@@ -35,7 +37,7 @@ namespace EloquentSurveillance {
                 delay(100);
             }
 
-            return false;
+            return false;**/ return true;
         }
 
         /**
@@ -66,6 +68,6 @@ namespace EloquentSurveillance {
     };
 }
 
-static EloquentSurveillance::WiFiHelper wifi;
+//static EloquentSurveillance::WiFiHelper wifi;
 
 #endif //ELOQUENTSURVEILLANCE_WIFIHELPER_H
