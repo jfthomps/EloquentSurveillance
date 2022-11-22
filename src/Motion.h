@@ -245,7 +245,7 @@ namespace EloquentSurveillance {
                         changes += 1;
             }
 
-            verbose("ROI{.x=", region.x, ", .y=", region.y, ", .width=", region.width, ", .height=", region.height, "} changes = ", changes, ", threshold = ", threshold);
+            //verbose("ROI{.x=", region.x, ", .y=", region.y, ", .width=", region.width, ", .height=", region.height, "} changes = ", changes, ", threshold = ", threshold);
 
             if (changes >= threshold) {
                 incrementCount();

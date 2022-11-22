@@ -10,7 +10,7 @@
 #include "./WiFiHelper.h"
 #include "./Camera.h"
 //#include "./StreamServer.h"
-//#include "./FileServer.h"
+#include "./FileServer.h"
 #include "./Motion.h"
 //#include "./Dashboard.h"
 //#include "./Region.h"

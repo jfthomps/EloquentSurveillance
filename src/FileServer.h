@@ -37,6 +37,7 @@ namespace EloquentSurveillance {
         */
         bool begin() {
             _server.on("/", HTTP_GET, [this]() {
+	        verbose("file server connection");
                 _server.setContentLength(CONTENT_LENGTH_UNKNOWN);
                 _server.send(200, "text/html", "");
                 _server.sendContent(F("<table border=\"1\"><thead><tr><th>Idx</th><th>Filename</th><th>Size</th></tr></thead><tbody>"));
@@ -54,6 +55,7 @@ namespace EloquentSurveillance {
                         _server.sendContent(String(i++));
                         _server.sendContent(F("</td><td><a href=\"/view"));
                         _server.sendContent(filename);
+                        verbose("file: ", filename);
                         _server.sendContent(F("\" target=\"_blank\">"));
                         _server.sendContent(filename.substring(1));
                         _server.sendContent(F("</a></td><td>"));
@@ -132,7 +134,7 @@ namespace EloquentSurveillance {
          *
          * @return
          */
-        String getWelcomeMessage() {
+        /*String getWelcomeMessage() {
             String ip = wifi.getIP();
 
             if (_port != 80) {
@@ -141,13 +143,13 @@ namespace EloquentSurveillance {
             }
 
             return String(F("FileServer listening at http://")) + ip;
-        }
+        }*/
 
     protected:
         fs::FS _fs;
         uint16_t _port;
-        uint16_t _maxNumFiles;
         WebServer _server;
+        uint16_t _maxNumFiles;
 
         /**
          *
